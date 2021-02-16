@@ -1,0 +1,16 @@
+@import "../../Resources/design-tokens/mixins";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  max-width: 33rem;
+
+  img {
+    max-width: 100%;
+  }
+
+  @include respond(md) {
+    flex-direction: row;
+  }
+}
