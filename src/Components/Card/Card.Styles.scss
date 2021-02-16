@@ -10,20 +10,29 @@ img {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.1) 5px 6px 36px;
-
+  position: relative;
 
   @include respond(md) {
     display: flex;
-    flex-direction: row;
     max-width: 73.2rem;
-    height: 28.1rem;
   }
 
   &__img {
+    height: 34vh;
+    overflow: hidden;
 
     @include respond(md) {
-      max-width: 287px;
+      flex: 0 0 40%;
+      background-color: cyan;
+      height: auto;
     }
+
+    img {
+      @include respond(md) {
+        min-height: 100%;
+      }
+    }
+
   }
 
   &__body {
@@ -34,17 +43,18 @@ img {
     color: var(--color-primary);
     font-size: 1.7rem;
     padding-top: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.2rem;
   }
 
   &__text {
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
   }
 
   &__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    //background-color: yellow;
 
     &__author {
       display: flex;
@@ -65,17 +75,55 @@ img {
       }
     }
 
-    &__share {
+    &__share__btn {
       height: 3.5rem;
       width: 3.5rem;
       border-radius: 50%;
       border: none;
+      z-index: 1;
+      cursor: pointer;
 
       &:focus {
         outline: none;
       }
+
+      &.open {
+        background-color: var(--color-primary-light);
+        path {
+          fill: var(--color-bg);
+        }
+        transform: translateY(1rem);
+      }
+    }
+  }
+
+  &__share {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    width: 100%;
+    background-color: var(--color-primary);
+    display: flex;
+    padding: 2rem;
+
+    &.open {
+      bottom: 0;
+    }
+
+    &__links {
+      display: inherit;
+      justify-content: space-between;
+      align-items: center;
+      flex: 0 0 70%;
+      //background-color: black;
+    }
+
+    p {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-bl);
+      letter-spacing: .5rem;
     }
   }
 }
-
-

@@ -8,8 +8,5 @@
   padding: 3rem 1rem;
 
   background-color: var(--color-bg);
-
-  @include respond(md) {
-    height: 100vh;
-  }
+  height: 100vh;
 }
