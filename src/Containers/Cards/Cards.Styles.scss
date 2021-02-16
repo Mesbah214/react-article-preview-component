@@ -1,8 +1,15 @@
+@import '../../Resources/design-tokens/mixins';
+
+
 .cardList {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 3rem 1rem;
 
-  height: 100vh;
   background-color: var(--color-bg);
+
+  @include respond(md) {
+    height: 100vh;
+  }
 }

@@ -5,9 +5,7 @@ import author from "../../Resources/images/avatar-michelle.jpg";
 function Card() {
   return (
     <div className="card">
-      <figure className="card__img">
-        <img src={drawer} alt="Drawers" />
-      </figure>
+      <img className='card__img' src={drawer} alt="Drawers" />
 
       <div className="card__body">
         <h3 className="card__title">
@@ -26,12 +24,14 @@ function Card() {
               <img src={author} alt="author" />
             </figure>
             
-            <p className="card__footer__author-name">Michelle Appleton</p>
-            
-            <time className="card__footer__author-date">28 Jun 2020</time>
+            <div className="card__footer__author__name-time">
+              <p className="card__footer__author-name">Michelle Appleton</p>
+              
+              <time className="card__footer__author-date">28 Jun 2020</time>
+            </div>
           </div>
 
-          <button>
+          <button className='card__footer__share'>
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13"><path fill="#6E8098" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/></svg>
           </button>
         </div>
