@@ -1,5 +1,4 @@
-@import '../../Resources/design-tokens/mixins';
-
+@import "../../Resources/design-tokens/mixins";
 
 .cardList {
   display: flex;
@@ -8,5 +7,7 @@
   padding: 3rem 1rem;
 
   background-color: var(--color-bg);
-  height: 100vh;
+  @include respond(md) {
+    height: 100vh;
+  }
 }
