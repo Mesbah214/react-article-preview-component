@@ -11,8 +11,10 @@ img {
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.1) 5px 6px 36px;
   position: relative;
+  margin-bottom: 3rem;
 
-  @include respond(md) {
+  @include respond(lg) {
+    margin: 2rem;
     display: flex;
     max-width: 73.2rem;
     overflow: visible;
@@ -22,7 +24,7 @@ img {
     height: 34vh;
     overflow: hidden;
 
-    @include respond(md) {
+    @include respond(lg) {
       flex: 0 0 40%;
       height: auto;
       border-top-left-radius: 1rem;
@@ -30,7 +32,7 @@ img {
     }
 
     img {
-      @include respond(md) {
+      @include respond(lg) {
         min-height: 100%;
       }
     }
@@ -96,7 +98,7 @@ img {
         }
         transform: translateY(1rem);
 
-        @include respond(md) {
+        @include respond(lg) {
           transform: translateY(0);
         }
       }
@@ -114,7 +116,7 @@ img {
 
     transition: all 0.2s;
 
-    @include respond(md) {
+    @include respond(lg) {
       max-width: 24.8rem;
       padding: 1.5rem 3.6rem;
       border-radius: 1rem;
@@ -138,7 +140,7 @@ img {
     &.open {
       bottom: 0;
 
-      @include respond(md) {
+      @include respond(lg) {
         bottom: 33%;
         transform: scaleY(1);
       }
@@ -150,7 +152,7 @@ img {
       align-items: center;
       flex: 0 0 70%;
 
-      @include respond(md) {
+      @include respond(lg) {
         flex: 0 0 100%;
       }
 

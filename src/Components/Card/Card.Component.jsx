@@ -1,40 +1,44 @@
+import React, { useState } from "react";
 import "./Card.Styles.scss";
-import drawer from "../../Resources/images/drawers.jpg";
-import author from "../../Resources/images/avatar-michelle.jpg";
 
-function Card() {
+function Card({
+  image,
+  title,
+  description,
+  authorName,
+  dateOfPublish,
+  authorImage,
+}) {
+  const [open, IsOpen] = useState(false);
+
   return (
     <div className="card">
       <div className="card__img">
-        <img className="" src={drawer} alt="Drawers" />
+        <img className="" src={image} alt="Drawers" />
       </div>
 
       <div className="card__body">
-        <h3 className="card__title">
-          Shift the overall look and feel by adding these wonderful touches to
-          furniture in your home
-        </h3>
+        <h3 className="card__title">{title}</h3>
 
-        <p className="card__text">
-          Ever been in a room and felt like something was missing? Perhaps it
-          felt slightly bare and uninviting. I’ve got some simple tips to help
-          you make any room feel complete.
-        </p>
+        <p className="card__text">{description}</p>
 
         <div className="card__footer">
           <div className="card__footer__author">
             <figure className="card__footer__author-img">
-              <img src={author} alt="author" />
+              <img src={authorImage} alt="author" />
             </figure>
 
             <div className="card__footer__author__name-time">
-              <p className="card__footer__author-name">Michelle Appleton</p>
+              <p className="card__footer__author-name">{authorName}</p>
 
-              <time className="card__footer__author-date">28 Jun 2020</time>
+              <time className="card__footer__author-date">{dateOfPublish}</time>
             </div>
           </div>
 
-          <button className="card__footer__share__btn">
+          <button
+            className={`card__footer__share__btn ${open ? "open" : ""}`}
+            onClick={() => IsOpen(!open)}
+          >
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
               <path
                 fill="#6E8098"
@@ -45,7 +49,7 @@ function Card() {
         </div>
       </div>
 
-      <div className="card__share">
+      <div className={`card__share ${open ? "open" : ""}`}>
         <div className="card__share__links">
           <p>share</p>
 

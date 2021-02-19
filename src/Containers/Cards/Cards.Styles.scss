@@ -2,12 +2,13 @@
 
 .cardList {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 3rem 1rem;
+  min-height: 100vh;
 
   background-color: var(--color-bg);
   @include respond(md) {
-    height: 100vh;
   }
 }
